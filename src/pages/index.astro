@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+const articles = Object.values(import.meta.glob('../content/articles/*.mdx', { eager: true }));
+const allArticles = articles.sort((a: any, b: any) => new Date(b.frontmatter?.pubDate || 0).getTime() - new Date(a.frontmatter?.pubDate || 0).getTime());
+const featuredArticles = articles.filter((a: any) => a.frontmatter?.featured);
+---
+<BaseLayout title="Mom Saves Deals" description="Save on baby gear, strollers, car seats, toys, and parenting essentials. Daily deals and exclusive discount codes." type="website">
+  <section class="hero">
+    <div class="container-narrow">
+      <h1>Smart Savings for Happy Families</h1>
+      <p>Curated deals and exclusive discount codes on the best baby gear, parenting essentials, and kids products. Your family deserves the best — at the best price.</p>
+    </div>
+  </section>
+  <div class="container">
+    {featuredArticles.length > 0 && (<section><h2>Featured Deals</h2><div class="card-grid">{featuredArticles.map((a: any) => { const s = a.url?.split('/').pop()?.replace('.mdx','')||''; return <ArticleCard title={a.frontmatter.title} description={a.frontmatter.description} url={`/articles/${s}/`} category={a.frontmatter.category} date={a.frontmatter.pubDate} />; })}</div></section>)}
+    <section><h2>Latest Deals &amp; Reviews</h2><div class="card-grid">{allArticles.map((a: any) => { const s = a.url?.split('/').pop()?.replace('.mdx','')||''; return <ArticleCard title={a.frontmatter.title} description={a.frontmatter.description} url={`/articles/${s}/`} category={a.frontmatter.category} date={a.frontmatter.pubDate} />; })}</div></section>
+  </div>
+</BaseLayout>

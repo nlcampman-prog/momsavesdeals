@@ -1,0 +1,9 @@
+---
+export interface Props { title: string; description: string; buttonLabel: string; buttonUrl: string; }
+const { title, description, buttonLabel, buttonUrl } = Astro.props;
+---
+<div class="cta-box">
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={buttonUrl} class="aff-btn" rel="sponsored noopener noreferrer" target="_blank">{buttonLabel} →</a>
+</div>

@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+const articles = Object.values(import.meta.glob('../content/articles/*.mdx', { eager: true }));
+const allArticles = articles.sort((a: any, b: any) => new Date(b.frontmatter?.pubDate || 0).getTime() - new Date(a.frontmatter?.pubDate || 0).getTime());
+---
+<BaseLayout title="All Deals" description="Browse all parenting deals and discount codes for baby gear, toys, essentials, and more.">
+  <div class="container"><div class="category-header"><h1>All Deals</h1><p>Every deal we've curated for your family.</p></div><div class="card-grid">{allArticles.map((a: any) => { const s = a.url?.split('/').pop()?.replace('.mdx','')||''; return <ArticleCard title={a.frontmatter.title} description={a.frontmatter.description} url={`/articles/${s}/`} category={a.frontmatter.category} date={a.frontmatter.pubDate} />; })}</div></div>
+</BaseLayout>

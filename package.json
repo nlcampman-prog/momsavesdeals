@@ -1,0 +1,10 @@
+{
+  "name": "mom-saves-deals",
+  "version": "1.0.0",
+  "description": "Mom Saves Deals — Discount codes & deals for parenting, baby, and kids products",
+  "type": "module",
+  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
+  "dependencies": {
+    "astro": "^5.0.0", "@astrojs/mdx": "^4.0.0", "@astrojs/rss": "^4.0.0", "@astrojs/sitemap": "^3.0.0"
+  }
+}

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ArticleCard from '../../../components/ArticleCard.astro';
+
+export async function getStaticPaths() {
+  const articles = Object.values(import.meta.glob('../../../content/articles/*.mdx', { eager: true }));
+  const seen = new Set<string>();
+  articles.forEach((a: any) => { const c = a.frontmatter?.category; if (c) seen.add(c.toLowerCase().replace(/\s+/g, '-')); });
+  return Array.from(seen).map(slug => ({ params: { slug }, props: {} }));
+}
+const { slug } = Astro.params;
+const articles = Object.values(import.meta.glob('../../../content/articles/*.mdx', { eager: true }));
+const matching = articles.filter((a: any) => { const c = a.frontmatter?.category; return c && c.toLowerCase().replace(/\s+/g, '-') === slug; }).sort((a: any, b: any) => new Date(b.frontmatter?.pubDate || 0).getTime() - new Date(a.frontmatter?.pubDate || 0).getTime());
+const catName = matching[0]?.frontmatter?.category || slug;
+---
+<BaseLayout title={`${catName} Deals & Discount Codes`} description={`Browse the best ${catName.toLowerCase()} deals for your family.`}>
+  <div class="container"><div class="category-header"><a href="/categories/" class="card-category" style="margin-bottom:0.5rem;display:inline-block;">All Categories</a><h1>{catName}</h1><p>{matching.length} deal{matching.length !== 1 ? 's' : ''}</p></div>
+    {matching.length > 0 ? (<div class="card-grid">{matching.map((a: any) => { const s = a.url?.split('/').pop()?.replace('.mdx','')||''; return <ArticleCard title={a.frontmatter.title} description={a.frontmatter.description} url={`/articles/${s}/`} category={a.frontmatter.category} date={a.frontmatter.pubDate} />; })}</div>) : <p>No deals found yet.</p>}
+  </div>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact Us" description="Get in touch with Mom Saves Deals.">
+  <div class="container-narrow about-section">
+    <h1>Contact Us</h1>
+    <p>Have a deal tip, a question, or want to partner with us? We'd love to hear from you. Email us directly at <a href="mailto:hello@momsavesdeals.com">hello@momsavesdeals.com</a>.</p>
+    <div class="contact-form">
+      <div class="form-group"><label for="name">Name</label><input type="text" id="name" placeholder="Your name" /></div>
+      <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="your@email.com" /></div>
+      <div class="form-group"><label for="message">Message</label><textarea id="message" rows="5" placeholder="How can we help?"></textarea></div>
+      <a href="mailto:hello@momsavesdeals.com" class="aff-btn">Send Message →</a>
+    </div>
+  </div>
+</BaseLayout>
