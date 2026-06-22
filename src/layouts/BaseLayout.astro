@@ -1,5 +1,6 @@
 ---
 export interface Props { title: string; description: string; canonical?: string; image?: string; type?: 'website' | 'article'; publishedTime?: string; tags?: string[]; }
+import '../styles/global.css';
 const { title, description, canonical, image = '/og-default.png', type = 'website', publishedTime, tags = [] } = Astro.props as Props;
 const siteTitle = 'Mom Saves Deals';
 const fullTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
@@ -41,7 +42,6 @@ const jsonLd = type === 'article' ? {
   <title>{fullTitle}</title>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <link rel="alternate" type="application/rss+xml" title={`${siteTitle} — Parenting Deals & Discount Codes`} href="/rss.xml" />
-  <link rel="stylesheet" href="/src/styles/global.css" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
