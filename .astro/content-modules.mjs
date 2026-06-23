@@ -1,0 +1,14 @@
+
+export default new Map([
+["src/content/articles/best-stroller-deals-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fbest-stroller-deals-2026.mdx&astroContentModuleFlag=true")],
+["src/content/articles/best-baby-products-easweet-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fbest-baby-products-easweet-2026.mdx&astroContentModuleFlag=true")],
+["src/content/articles/baby-gear-deals.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fbaby-gear-deals.mdx&astroContentModuleFlag=true")],
+["src/content/articles/best-choice-products-kids-amazon-review.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fbest-choice-products-kids-amazon-review.mdx&astroContentModuleFlag=true")],
+["src/content/articles/brightzy-kids-educational-review.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fbrightzy-kids-educational-review.mdx&astroContentModuleFlag=true")],
+["src/content/articles/gafly-baby-gear-essentials-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fgafly-baby-gear-essentials-2026.mdx&astroContentModuleFlag=true")],
+["src/content/articles/little-spoon-review-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Flittle-spoon-review-2026.mdx&astroContentModuleFlag=true")],
+["src/content/articles/prenatal-supplement-deals.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fprenatal-supplement-deals.mdx&astroContentModuleFlag=true")],
+["src/content/articles/tinyland-educational-toys-review-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Ftinyland-educational-toys-review-2026.mdx&astroContentModuleFlag=true")],
+["src/content/articles/mama-mia-covers-review.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fmama-mia-covers-review.mdx&astroContentModuleFlag=true")],
+["src/content/articles/wonder-math-review-2026.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Farticles%2Fwonder-math-review-2026.mdx&astroContentModuleFlag=true")]]);
+		
