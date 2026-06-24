@@ -169,3 +169,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-primary);
   h1 { font-size: 1.6rem; }
   .hero h1 { font-size: 1.7rem; }
 }
+/* Buy button in nav */
+.buy-btn {
+  background: linear-gradient(135deg, #e91e8c, #d4187a) !important;
+  color: white !important;
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+.buy-btn:hover {
+  background: linear-gradient(135deg, #d4187a, #b8156a) !important;
+  color: white !important;
+  transform: scale(1.05);
+}
